@@ -1,6 +1,12 @@
 const a = 10;
 const b = 0;
 
+console.log("Hello i am in first?");
+
+setTimeout(() => console.log("hello i am setTimeOut!!"));
+
+setImmediate(() => console.log("hello i am setImmediate"));
+
 // setTimeout(() => {
 //   b = 30;
 // }, 2000);
