@@ -26,3 +26,79 @@ waitingData.then((b) => {
   //   b = data;
   console.log("New me ::", a + b);
 });
+
+const promiseOne = new Promise(function (resolve, reject) {
+  setTimeout(() => {
+    console.log("Async task is complete");
+    resolve();
+  });
+});
+
+promiseOne.then(function () {
+  console.log("promised comsumed");
+});
+
+new Promise(function (resolve, reject) {
+  setTimeout(function () {
+    console.log("async task 2");
+    resolve();
+  }, 2000);
+}).then(function () {
+  console.log("async task 2 complete");
+});
+
+const promiseThree = new Promise(function (resolve, reject) {
+  setTimeout(function () {
+    resolve({ username: "tester", email: "tester@gmail.com" });
+  });
+});
+promiseThree.then(function (user) {
+  console.log(user);
+});
+
+const promiseFour = new Promise(function (resolve, reject) {
+  setTimeout(() => {
+    let error = true;
+    if (!error) {
+      resolve({ username: "spider", password: "12345" });
+    } else {
+      reject("Error : Something wetn wrong!!");
+    }
+  });
+});
+promiseFour
+  .then((user) => {
+    console.log(user);
+    return user.username;
+  })
+  .then((username) => {
+    console.log(username);
+  })
+  .catch(function (error) {
+    console.log(error);
+  })
+  .finally(() => {
+    console.log("The promise is either resolve or rejected");
+  });
+
+const promiseFive = new Promise(function (resolve, reject) {
+  setTimeout(() => {
+    let error = true;
+    if (!error) {
+      resolve({ username: "iron", password: "123" });
+    } else {
+      reject("ERROR : js went wrong");
+    }
+  }, 1000);
+});
+async function consumePromiseFive() {
+  try {
+    const response = await promiseFive;
+    console.log(response);
+  } catch (error) {
+    console.log(error);
+  }
+}
+consumePromiseFive();
+
+// console.log(username);
