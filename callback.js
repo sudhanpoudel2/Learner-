@@ -22,35 +22,35 @@ console.log(hello(10, 30));
 
 // callback
 
-// const add = function (a, b) {
-//   return a + b;
-// };
+const add = function (a, b) {
+  return a + b;
+};
 
-// function callBack(add) {
-//   console.warn(add(200, 300));
-// }
+function callBack(add) {
+  console.warn(add(200, 300));
+}
 
-// callBack(add);
+callBack(add);
 
-// function callBack(add) {
-//   console.log(add(100, 100));
-// }
-// callBack(function (a, b) {
-//   return a + b;
-// });
+function callBack(add) {
+  console.log(add(100, 100));
+}
+callBack(function (a, b) {
+  return a + b;
+});
 
-// const funA = () => {
-//   setTimeout(() => {
-//     console.log("i will be appare after 5 sec");
-//   }, 5000);
-//   console.log("hello1");
-// };
-// const funB = () => {
-//   console.log("Hello2");
-// };
+const funA = () => {
+  setTimeout(() => {
+    console.log("i will be appare after 5 sec");
+  }, 5000);
+  console.log("hello1");
+};
+const funB = () => {
+  console.log("Hello2");
+};
 
-// funA();
-// funB();
+funA();
+funB();
 
 const talkOne = (friend, callback) => {
   console.log(
