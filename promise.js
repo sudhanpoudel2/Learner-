@@ -1,6 +1,3 @@
-const a = 10;
-const b = 0;
-
 console.log("Hello i am in first?");
 
 setTimeout(() => console.log("hello i am setTimeOut!!"));
@@ -14,11 +11,13 @@ setImmediate(() => console.log("hello i am setImmediate"));
 console.log("Old me::", a + b); // while i do that it  give 10 out put
 // Its also disadvantage of ascynhronous
 
-//now solving this problem using promice
+// now solving this problem using promice
+const a = 10;
+const b = 0;
 
 const waitingData = new Promise((resolve, reject) => {
   setTimeout(() => {
-    resolve(30);
+    resolve(true);
   }, 2000);
 });
 
@@ -81,24 +80,24 @@ promiseFour
     console.log("The promise is either resolve or rejected");
   });
 
-const promiseFive = new Promise(function (resolve, reject) {
-  setTimeout(() => {
-    let error = true;
-    if (!error) {
-      resolve({ username: "iron", password: "123" });
-    } else {
-      reject("ERROR : js went wrong");
-    }
-  }, 1000);
-});
-async function consumePromiseFive() {
-  try {
-    const response = await promiseFive;
-    console.log(response);
-  } catch (error) {
-    console.log(error);
-  }
-}
-consumePromiseFive();
+// const promiseFive = new Promise(function (resolve, reject) {
+//   setTimeout(() => {
+//     let error = true;
+//     if (!error) {
+//       resolve({ username: "iron", password: "123" });
+//     } else {
+//       reject("ERROR : js went wrong");
+//     }
+//   }, 1000);
+// });
+// async function consumePromiseFive() {
+//   try {
+//     const response = await promiseFive;
+//     console.log(response);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+// consumePromiseFive();
 
-// console.log(username);
+// // console.log(username);
