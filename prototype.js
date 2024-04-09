@@ -1,80 +1,85 @@
-// const myName = "Sudhan     ";
-// const myBreak = "Chiya           ";
+const myName = "Sudhan     ";
+const myBreak = "Chiya           ";
 
-// console.log(myName.trim().length);
-// console.log(myBreak.trueLength);
+console.log(myName.trim().length);
+console.log(myBreak.trueLength);
 
-// const heros = ["thor", "spiderman"];
-// const sudhan = [];
+//  /////////////////
 
-// const herosPower = {
-//   thor: "hammer",
-//   spiderman: "sling",
+const heros = ["thor", "spiderman"];
+const sudhan = [];
 
-//   getSpidermanPower: function () {
-//     console.log(`spider power is ${this.spiderman}`);
-//   },
-// };
+const herosPower = {
+  thor: "hammer",
+  spiderman: "sling",
 
-// Object.prototype.sudhan = function () {
-//   console.log(`sudhan is preseny in all object`);
-// };
+  getSpidermanPower: function () {
+    console.log(`spider power is ${this.spiderman}`);
+  },
+};
 
-// Array.prototype.hiSudhan = function () {
-//   console.log(`Sudhan say hi!!`);
-// };
-// console.log(`hello`);
+Object.prototype.sudhan = function () {
+  console.log(`sudhan is preseny in all object`);
+};
 
-// herosPower.sudhan();
-// heros.sudhan();
-// heros.hiSudhan();
-// sudhan.hiSudhan();
-// console.log(sudhan);
+Array.prototype.hiSudhan = function () {
+  console.log(`Sudhan say hi!!`);
+};
+console.log(`hello`);
 
-//inheritane
+herosPower.sudhan();
+heros.sudhan();
+heros.hiSudhan();
+sudhan.hiSudhan();
+console.log(sudhan);
 
-// const User = {
-//   name: "tester",
-//   email: "tester@gmail.com",
-// };
-// const Teacher = {
-//   makeVideo: true,
-// };
+inheritane;
 
-// const teachingSupport = {
-//   isAvailable: false,
-// };
+const User = {
+  name: "tester",
+  email: "tester@gmail.com",
+};
+const Teacher = {
+  makeVideo: true,
+};
 
-// const TASupport = {
-//   makeAssignment: "Js assignment ",
-//   fullTime: false,
-//   __proto__: teachingSupport,
-// };
+const teachingSupport = {
+  isAvailable: false,
+};
 
-// Teacher.__proto__ = User;
+const TASupport = {
+  makeAssignment: "Js assignment ",
+  fullTime: false,
+  __proto__: teachingSupport,
+};
+
+Teacher.__proto__ = User;
 
 // // modern syntax
-// Object.setPrototypeOf(teachingSupport, Teacher);
+Object.setPrototypeOf(teachingSupport, Teacher);
 
-// let anotherUsername = "mobile        ";
+let anotherUsername = "mobile        ";
 
-// String.prototype.trueLength = function () {
-//   console.log(`${this}`);
-//   console.log(`True lenght is ${this.trim().length}`);
-// };
+String.prototype.trueLength = function () {
+  console.log(`${this}`);
+  console.log(`True lenght is ${this.trim().length}`);
+};
 
-// anotherUsername.trueLength();
-// "Sudhan".trueLength();
-// "cup".trueLength();
+anotherUsername.trueLength();
+"Sudhan".trueLength();
+"cup".trueLength();
 
-// function person(name, age, color) {
-//   (this.name = name), (this.age = age), (this.color = color);
-// }
+///////
 
-// const father = new person("john", 32, "white");
-// console.log("name is ", father.name);
-// console.log(father.toSrring());
+function person(name, age, color) {
+  (this.name = name), (this.age = age), (this.color = color);
+}
 
+const father = new person("john", 32, "white");
+console.log("name is ", father.name);
+console.log(father.toSrring());
+
+/////
 const student = {
   name: "sudhan",
   lastName: "poudel",
