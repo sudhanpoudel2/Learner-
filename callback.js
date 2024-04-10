@@ -164,3 +164,15 @@ nepalColleges("new summit college").then((res) => {
 //     nepalColleges("Softbenz Acadmy");
 //   })
 // );
+
+const company = function (name, nextCompany) {
+  setTimeout(() => {
+    console.log("Name : ", name);
+    if (nextCompany) {
+      nextCompany();
+    }
+  }, 1000);
+};
+company("SoftBenz", () => {
+  company("Info tech");
+});

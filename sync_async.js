@@ -14,15 +14,67 @@
 //   });
 // });
 
-function api() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      console.log("Hello");
-      resolve(200);
-    }, 2000);
-  });
-}
+// console.log("ffdsdfs");
 
-async function p1() {
-  await api();
+// function api(dataId) {
+//   // console.log("hello");
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       console.log("Hello::", dataId);
+//       resolve();
+//     }, 2000);
+//   });
+// }
+
+// // api(5);
+// async function pen() {
+//   console.log("getting data 1..........");
+//   await api(5);
+//   console.log("getting data 2..........");
+//   await api(6);
+//   console.log("getting data 3..........");
+//   await api(7);
+//   console.log("getting data 4..........");
+//   await api(8);
+//   console.log("getting data 5..........");
+//   await api(9);
+//   console.log("getting data 6..........");
+//   await api(10);
+//   console.log("getting data 7..........");
+//   await api(11);
+//   console.log("getting data 8..........");
+//   await api(12);
+// }
+
+// pen();
+// const api = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     console.log("hello i am working");
+//     resolve();
+//   }, 2000);
+// });
+// const asyncFunction = function (dataId) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       console.log("Data::", dataId);
+//       resolve();
+//     });
+//   });
+// };
+
+// async function p1() {
+//   await asyncFunction(5);
+// }
+// p1();
+
+const getFruit = function (fruit) {
+  return new Promise((resolve, reject) => {
+    console.log("Fruits : ", fruit);
+    resolve();
+  });
+};
+async function allFruit() {
+  await getFruit("Apple");
+  await getFruit("Banana");
 }
+allFruit();

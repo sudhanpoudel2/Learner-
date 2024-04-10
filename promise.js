@@ -171,3 +171,26 @@ Data1.then((res) => {
 // Data2.then((res) => {
 //   console.log(res);
 // });
+
+const itCompany = function (name) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("Name : ", name);
+      resolve();
+    });
+  });
+};
+
+itCompany("Softbenz Tech").then(() => {
+  itCompany("Info Tech").then(() => {
+    itCompany("Search Tech");
+  });
+});
+
+const mult = function (s, p) {
+  console.log("Solution : ", s * p);
+};
+const calc = function (s, p, value) {
+  value(s, p);
+};
+calc(5, 4, mult);
