@@ -67,14 +67,24 @@
 // }
 // p1();
 
-const getFruit = function (fruit) {
-  return new Promise((resolve, reject) => {
-    console.log("Fruits : ", fruit);
-    resolve();
-  });
-};
-async function allFruit() {
-  await getFruit("Apple");
-  await getFruit("Banana");
+// const getFruit = function (fruit) {
+//   return new Promise((resolve, reject) => {
+//     console.log("Fruits : ", fruit);
+//     resolve();
+//   });
+// };
+// async function allFruit() {
+//   await getFruit("Apple");
+//   await getFruit("Banana");
+// }
+// allFruit();
+function sleep(millisecond) {
+  const startTime = new Date().getTime();
+  console.log("Opertion is running!!");
+  while (new Date().getTime() < startTime + millisecond) {
+    console.log("in process..");
+  }
+  console.log("Operation is done");
 }
-allFruit();
+sleep(2000);
+console.log("do something else.....");
