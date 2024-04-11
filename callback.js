@@ -141,17 +141,17 @@
 // };
 // calc(add);
 
-const nepalColleges = function (name) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      console.log("College Name: ", name);
-      resolve();
-    }, 2000);
-  });
-};
-nepalColleges("new summit college").then((res) => {
-  nepalColleges("chelsea Int. acadmy").then(() => {});
-});
+// const nepalColleges = function (name) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       console.log("College Name: ", name);
+//       resolve();
+//     }, 2000);
+//   });
+// };
+// nepalColleges("new summit college").then((res) => {
+//   nepalColleges("chelsea Int. acadmy").then(() => {});
+// });print
 // nepalColleges(
 //   "New Sumit College",
 //   setTimeout(() => {
@@ -165,14 +165,28 @@ nepalColleges("new summit college").then((res) => {
 //   })
 // );
 
-const company = function (name, nextCompany) {
-  setTimeout(() => {
-    console.log("Name : ", name);
-    if (nextCompany) {
-      nextCompany();
-    }
-  }, 1000);
+// const company = function (name, nextCompany) {
+const cbFun = () => {
+  console.log("infoSoft");
 };
-company("SoftBenz", () => {
-  company("Info tech");
-});
+const mainFun = (x, cbFun) => {
+  setTimeout(() => {
+    // console.log(x);
+    cbFun();
+  }, 5000);
+  // cbFun();
+
+  console.log(x);
+};
+mainFun("SoftBenz", cbFun);
+//   console.log("Name : ", nextCompany);
+//   setTimeout(() => {
+//     console.log("Name : ", name);
+//     // if (nextCompany) {
+//     //   nextCompany();
+//     // }
+//   }, 5000);
+// };
+// cbFun("SoftBenz", () => {
+//   cbFun("Info tech");
+// });
