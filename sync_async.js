@@ -1,5 +1,7 @@
 // import readline from "readline";
 
+// const { response } = require("express");
+
 // const rl = readline.createInterface({
 //   input: process.stdin,
 //   output: process.stdout,
@@ -78,13 +80,65 @@
 //   await getFruit("Banana");
 // }
 // allFruit();
-function sleep(millisecond) {
-  const startTime = new Date().getTime();
-  console.log("Opertion is running!!");
-  while (new Date().getTime() < startTime + millisecond) {
-    console.log("in process..");
-  }
-  console.log("Operation is done");
+// function sleep(millisecond) {
+//   const startTime = new Date().getTime();
+//   console.log("Opertion is running!!");
+//   while (new Date().getTime() < startTime + millisecond) {
+//     console.log("in process..");
+//   }
+//   console.log("Operation is done");
+// }
+// sleep(1000);
+// console.log("do something else.....");
+
+import { log } from "console";
+import readline from "readline";
+
+const userLogin = () => {
+  console.log("Enter Username and Password");
+
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  });
+
+  return new Promise((resolve, reject) => {
+    rl.question("Enter Username: ", (username) => {
+      rl.question("Enter Password: ", (password) => {
+        setTimeout(() => {
+          console.log("Performing user authentication");
+          if (username === "sudhan" && password === "sudhan") {
+            resolve("User Authentication!!");
+          } else {
+            reject("Authentication Failed!!");
+          }
+          rl.close();
+        }, 1000);
+      });
+    });
+  });
+};
+
+function goToHomePage(userAuthStatus) {
+  return Promise.resolve(`Go to home page ${userAuthStatus}`);
 }
-sleep(2000);
-console.log("do something else.....");
+
+// userLogin()
+//   .then((response) => {
+//     console.log("validate user");
+//     return goToHomePage(response);
+//   })
+//   .then((userAuthStatus) => {
+//     console.log(userAuthStatus);
+//   })
+//   .catch((error) => {
+//     console.error(error);
+//   });
+
+async function performTask() {
+  const response = await userLogin();
+  console.log("Validated User!!");
+  const userAuthStatus = await goToHomePage(response);
+  console.log(userAuthStatus);
+}
+performTask();
