@@ -108,7 +108,7 @@ const tea = function () {
 
 setTimeout(tea, 7000);
 
-//////////////////////////////////////////////////
+// //////////////////////////////////////////////////
 
 const x = 15;
 const y = 16;
@@ -224,5 +224,32 @@ Promise.race(multiCall).then((values) => {
 });
 
 // aipCall(2000).then((val) => {
+//   console.log(val);
+// });
+
+const p = Promise.resolve("Execution is done");
+p.then((val) => {
+  console.log(val);
+});
+
+const maleApiCall = (time) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("This api executed in " + time);
+    }, time);
+  });
+};
+
+const multiApiCall = [maleApiCall(2000), maleApiCall(1000), maleApiCall(500)];
+
+// Promise.all(multiApiCall).then((val) => {
+//   console.log(val);
+// });
+
+Promise.race(multiApiCall).then((val) => {
+  console.log(val);
+});
+
+// maleApiCall(1000).then((val) => {
 //   console.log(val);
 // });
